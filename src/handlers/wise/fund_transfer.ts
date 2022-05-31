@@ -1,5 +1,6 @@
 export const fund_transfer = async(req:Request, res:Response):Promise<Response> => {
     try {
+        // console.log("Hello world!");
         const body:any =await req.json();
         const create_transfer_id:string=body.create_transfer_id;
         const profile_id:string = body.profile_id;
