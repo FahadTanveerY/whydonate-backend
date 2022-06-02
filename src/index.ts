@@ -5,6 +5,5 @@ const router = Router();
 
 wise_route(router);
 
-addEventListener('fetch', (event:any) => {
-  event.respondWith(router.handle(event.request))
-})
+router.all("*", () => new Response("404, not found!", { status: 404 }))
+addEventListener('fetch', (event: any) => {  event.respondWith(router.handle(event.request))})
