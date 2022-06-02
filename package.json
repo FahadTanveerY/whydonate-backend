@@ -20,9 +20,11 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.0.0",
+    "@types/iban": "^0.0.32",
     "@types/jest": "^26.0.23",
     "@types/service-worker-mock": "^2.0.1",
     "@types/uuid": "^8.3.4",
+    "@types/validator": "^13.7.2",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "eslint": "^7.21.0",
@@ -38,7 +40,10 @@
     "webpack-cli": "^4.7.0"
   },
   "dependencies": {
+    "iban": "^0.0.14",
     "itty-router": "^2.6.1",
-    "uuid": "^8.3.2"
+    "joi": "^17.6.0",
+    "uuid": "^8.3.2",
+    "validator": "^13.7.0"
   }
 }
