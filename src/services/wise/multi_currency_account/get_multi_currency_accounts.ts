@@ -21,7 +21,7 @@ export const get_multi_currency_accounts=async(req:Request, res:Response):Promis
         return new Response(
             JSON.stringify({
                 status: 'failed',
-                handler: 'handlers/wise/multi_currency_account/get_multi_currency_accounts',
+                handler: 'services/wise/multi_currency_account/get_multi_currency_accounts',
                 time: new Date(),
                 error: error
             }), {

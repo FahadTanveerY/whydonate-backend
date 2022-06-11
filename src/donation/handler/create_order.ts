@@ -11,7 +11,7 @@ try {
     return new Response(
         JSON.stringify({
             status: 'failed',
-            handler: 'handlers/wise/multi_currency_account/create_balance_account',
+            handler: 'donation/handler/create_order',
             time: new Date(),
             error: error
         }), {

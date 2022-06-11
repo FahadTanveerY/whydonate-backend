@@ -37,7 +37,7 @@ export const create_transfer = async(req:Request, res:Response):Promise<Response
         return new Response(
             JSON.stringify({
                 status: 'failed',
-                handler: 'handlers/wise/create_transfer',
+                handler: 'services/wise/create_transfer',
                 time: new Date(),
                 error: error
             }), {

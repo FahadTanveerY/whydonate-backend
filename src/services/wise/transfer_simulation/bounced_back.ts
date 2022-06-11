@@ -1,9 +1,9 @@
-export const funds_converted=async(req:Request, res:Response):Promise<Response>=> {
+export const bounced_back=async(req:Request, res:Response):Promise<Response>=> {
 
     try {
         let id:any=req;
         id =id.params.id;
-        const data:any =await (await fetch(`https://api.sandbox.transferwise.tech/v1/simulation/transfers/${id}/funds_converted`,{
+        const data:any =await (await fetch(`https://api.sandbox.transferwise.tech/v1/simulation/transfers/${id}/bounced_back`,{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ export const funds_converted=async(req:Request, res:Response):Promise<Response>=
         return new Response(
             JSON.stringify({
                 status: 'failed',
-                handler: 'handlers/wise/transfer_simulation/processing',
+                handler: 'services/wise/transfer_simulation/bounced_back',
                 time: new Date(),
                 error: error
             }), {

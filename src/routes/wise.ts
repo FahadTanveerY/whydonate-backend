@@ -1,20 +1,20 @@
 import {Router} from 'itty-router';
-import {create_quote} from '../handlers/wise/create_quote';
-import {create_recipient} from '../handlers/wise/create_recipient';
-import {create_transfer} from '../handlers/wise/create_transfer';
-import { get_recipients } from '../handlers/wise/get_recipients';
-import {fund_transfer} from '../handlers/wise/fund_transfer';
-import {create_balance_account} from '../handlers/wise/multi_currency_account/create_balance_account';
-import {multi_currency_create_quote} from '../handlers/wise/multi_currency_account/create_quote';
-import {transfer_between_balance} from '../handlers/wise/multi_currency_account/transfer_between_balance';
-import {get_multi_currency_accounts} from '../handlers/wise/multi_currency_account/get_multi_currency_accounts';
-import { processing } from '../handlers/wise/transfer_simulation/processing';
-import { bounced_back } from '../handlers/wise/transfer_simulation/bounced_back';
-import { funds_converted } from '../handlers/wise/transfer_simulation/funds_converted';
-import { funds_refunded } from '../handlers/wise/transfer_simulation/funds_refunded';
-import { outgoing_payment_sent } from '../handlers/wise/transfer_simulation/outgoing_payment_send';
-import { transfer_delivery_time } from '../handlers/wise/transfer_delivery_time';
-import { transfer_status } from '../handlers/wise/transfer_status';
+import {create_quote} from '../services/wise/create_quote';
+import {create_recipient} from '../services/wise/create_recipient';
+import {create_transfer} from '../services/wise/create_transfer';
+import { get_recipients } from '../services/wise/get_recipients';
+import {fund_transfer} from '../services/wise/fund_transfer';
+import {create_balance_account} from '../services/wise/multi_currency_account/create_balance_account';
+import {multi_currency_create_quote} from '../services/wise/multi_currency_account/create_quote';
+import {transfer_between_balance} from '../services/wise/multi_currency_account/transfer_between_balance';
+import {get_multi_currency_accounts} from '../services/wise/multi_currency_account/get_multi_currency_accounts';
+import { processing } from '../services/wise/transfer_simulation/processing';
+import { bounced_back } from '../services/wise/transfer_simulation/bounced_back';
+import { funds_converted } from '../services/wise/transfer_simulation/funds_converted';
+import { funds_refunded } from '../services/wise/transfer_simulation/funds_refunded';
+import { outgoing_payment_sent } from '../services/wise/transfer_simulation/outgoing_payment_send';
+import { transfer_delivery_time } from '../services/wise/transfer_delivery_time';
+import { transfer_status } from '../services/wise/transfer_status';
 
 export function wise_route(router: Router<Request,{}>){
     return(

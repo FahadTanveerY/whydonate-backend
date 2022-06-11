@@ -1,4 +1,4 @@
-export const create_quote=async(req:Request, res:Response):Promise<Response> => {
+export const multi_currency_create_quote=async(req:Request, res:Response):Promise<Response> => {
     try {
         const body:any = await req.json();
         const data:any =await (await fetch(`https://api.sandbox.transferwise.tech/v2/quotes`,{
@@ -12,7 +12,8 @@ export const create_quote=async(req:Request, res:Response):Promise<Response> => 
             targetCurrency: body.targetCurrency,
             targetAmount:body.targetAmount,
             sourceAmount:body.sourceAmount,
-            profile: body.profile
+            profile: body.profile,
+            payOut:body.payOut
         }) 
     })).json();
 
@@ -25,7 +26,7 @@ export const create_quote=async(req:Request, res:Response):Promise<Response> => 
         return new Response(
             JSON.stringify({
                 status: 'failed',
-                handler: 'handlers/wise/create_quote',
+                handler: 'services/wise/multi_currency_account/multi_currency_create_quote',
                 time: new Date(),
                 error: error
             }), {

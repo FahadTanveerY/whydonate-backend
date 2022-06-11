@@ -1,8 +1,8 @@
-export const transfer_status=async(req:Request, res:Response):Promise<Response>=> {
+export const transfer_delivery_time=async(req:Request, res:Response):Promise<Response>=> {
     try {
         let id:any=req;
         id =id.params.id;
-        const data:any =await (await fetch(`https://api.sandbox.transferwise.tech/v1/transfers/${id}`,{
+        const data:any =await (await fetch(`https://api.sandbox.transferwise.tech/v1/delivery-estimates/${id}`,{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ export const transfer_status=async(req:Request, res:Response):Promise<Response>=
         return new Response(
             JSON.stringify({
                 status: 'failed',
-                handler: 'handlers/wise/transfer_delivery_time',
+                handler: 'services/wise/transfer_delivery_time',
                 time: new Date(),
                 error: error
             }), {

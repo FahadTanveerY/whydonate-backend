@@ -14,7 +14,7 @@ export const update_order_status=async(req:Request, res:Response):Promise<Respon
         return new Response(
             JSON.stringify({
                 status: 'failed',
-                handler: 'handlers/wise/multi_currency_account/create_balance_account',
+                handler: 'donation/handler/update_order_status',
                 time: new Date(),
                 error: error
             }), {

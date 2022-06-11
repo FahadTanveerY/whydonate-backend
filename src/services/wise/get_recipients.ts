@@ -23,7 +23,7 @@ try {
     return new Response(
         JSON.stringify({
             status: 'failed',
-            handler: 'handlers/wise/get_recipient',
+            handler: 'services/wise/get_recipient',
             time: new Date(),
             error: error
         }), {

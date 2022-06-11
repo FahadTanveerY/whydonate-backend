@@ -20,7 +20,7 @@ export const funds_refunded=async(req:Request, res:Response):Promise<Response>=>
         return new Response(
             JSON.stringify({
                 status: 'failed',
-                handler: 'handlers/wise/transfer_simulation/processing',
+                handler: 'services/wise/transfer_simulation/funds_refunded',
                 time: new Date(),
                 error: error
             }), {

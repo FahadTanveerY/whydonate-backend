@@ -31,7 +31,7 @@ export const create_recipient = async(req:Request, res:Response):Promise<Respons
         return new Response(
             JSON.stringify({
                 status: 'failed',
-                handler: 'handlers/wise/create_recipient',
+                handler: 'services/wise/create_recipient',
                 time: new Date(),
                 error: error
             }), {

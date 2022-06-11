@@ -2,6 +2,7 @@ import IBAN from 'iban';
 import { v4 as uuidv4 } from 'uuid';
 
 export const bank_account_details=async(req:Request,res:Response):Promise<Response>=>{
+  try {
     const X_idempotence_uuid=uuidv4()
     console.log(X_idempotence_uuid)
     const body:any=await req.json();
@@ -65,6 +66,19 @@ export const bank_account_details=async(req:Request,res:Response):Promise<Respon
       headers: { 'content-type': 'application/json' }
     });
     }
+  } catch (error) {
+    return new Response(
+      JSON.stringify({
+          status: 'failed',
+          handler: 'account/handler/bank_account_details',
+          time: new Date(),
+          error: error
+      }), {
+      headers: { 'content-type': 'application/json' }
+      }
+  )
+  }
+
     
      
     

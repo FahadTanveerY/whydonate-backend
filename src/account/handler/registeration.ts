@@ -1,7 +1,8 @@
 import validator from 'validator';
 
 export const registeration=async(req:Request,res:Response):Promise<Response>=>{
-  const data:any=await req.json();
+  try {
+    const data:any=await req.json();
     let flag:boolean=false;
  const dummy_data:any= [
                 {
@@ -59,6 +60,19 @@ export const registeration=async(req:Request,res:Response):Promise<Response>=>{
       headers: { 'content-type': 'application/json' }
     });
     }
+  } catch (error) {
+    return new Response(
+      JSON.stringify({
+          status: 'failed',
+          handler: 'account/handler/registeration',
+          time: new Date(),
+          error: error
+      }), {
+      headers: { 'content-type': 'application/json' }
+      }
+  )
+  }
+  
       
     
     }

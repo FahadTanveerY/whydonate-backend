@@ -32,7 +32,7 @@ export const transfer_between_balance= async(req:Request, res:Response):Promise<
         return new Response(
             JSON.stringify({
                 status: 'failed',
-                handler: 'handlers/wise/multi_currency_account/transfer_between_balance',
+                handler: 'services/wise/multi_currency_account/transfer_between_balance',
                 time: new Date(),
                 error: error
             }), {

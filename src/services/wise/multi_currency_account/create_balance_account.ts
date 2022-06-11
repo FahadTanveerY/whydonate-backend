@@ -31,7 +31,7 @@ export const create_balance_account=async(req:Request, res:Response):Promise<Res
         return new Response(
             JSON.stringify({
                 status: 'failed',
-                handler: 'handlers/wise/multi_currency_account/create_balance_account',
+                handler: 'services/wise/multi_currency_account/create_balance_account',
                 time: new Date(),
                 error: error
             }), {
