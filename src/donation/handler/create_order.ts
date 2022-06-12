@@ -1,5 +1,6 @@
 export const create_order=async(req:Request, res:Response):Promise<Response> => {
 try {
+    // Call the mollie api for payment
     // Store data in donation_order table
     const body:Request = await req.json();
     return new Response(JSON.stringify({
