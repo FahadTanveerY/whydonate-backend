@@ -7,6 +7,8 @@ import { order_paid } from '../donation/handler/order_paid';
 import { generate_transaction } from '../donation/handler/generate_transaction';
 import { balance_update } from '../donation/handler/balance_update';
 import { order_approved } from '../donation/handler/order_approved';
+import { transaction_approved } from '../donation/handler/transaction_approved';
+import { approved_balance_update } from '../donation/handler/approved_balance_update';
 export function whydonate_routes(router: Router<Request,{}>){
     return(
         router
@@ -17,6 +19,8 @@ export function whydonate_routes(router: Router<Request,{}>){
             .post('/api/whydonate/order/transaction/:id',generate_transaction)
             .post('/api/whydonate/order/balance_update/:id',balance_update)
             .post('/api/whydonate/order/order_approved/:id',order_approved)
+            .post('/api/whydonate/order/transaction_approved/:id',transaction_approved)
+            .post('/api/whydonate/order/approved_balance_update/:id',approved_balance_update)
 
     )
 }
